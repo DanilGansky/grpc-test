@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "./pkg/api";
+
+package api;
+
+service TimenowService {
+    rpc Now(TimenowRequest) returns (TimenowResponse) {}
+}
+
+message TimenowRequest {
+    string timezone = 1;
+}
+
+message TimenowResponse {
+    string timestamp = 1;
+}
